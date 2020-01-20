@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sjl/badwolf'
 Plugin 'itchyny/lightline.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()          
 filetype plugin indent on 
