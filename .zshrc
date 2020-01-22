@@ -99,3 +99,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias qemu="qemu-system-x86_64"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
