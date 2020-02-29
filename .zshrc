@@ -114,3 +114,5 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 function gh() {
     history | grep -i "$1"
 }
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
