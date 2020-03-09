@@ -116,3 +116,4 @@ function gh() {
 }
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+source $GOPATH/src/github.com/tomnomnom/gf/gf-completion.bash
