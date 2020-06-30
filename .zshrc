@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git safe-paste)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,19 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias icat="kitty +kitten icat"
-alias screenshot="gnome-screenshot -i"
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 
-autoload -Uz compinit
-compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
-export PATH="$PATH:$HOME/.axiom/interact"
-source /home/tomcarver/.axiom/functions/autocomplete.zsh
-compdef _axiom-ssh axiom-rm
-compdef _axiom-ssh axiom-ssh
-compdef _axiom-ssh axiom-select
-compdef _axiom-ssh axiom-backup
-compdef _axiom-ssh axiom-vpn
-compdef _axiom-restore axiom-restore
-compdef _axiom-deploy axiom-deploy
+function clip() {
+    xclip -i $1 -selection clipboard
+}

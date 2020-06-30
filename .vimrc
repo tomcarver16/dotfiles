@@ -4,9 +4,13 @@ filetype off
 
 set nocompatible
 
-set shiftwidth=4
+set expandtab
 
-set softtabstop=4
+set tabstop=2
+
+set softtabstop=2
+
+set shiftwidth=2
 
 set noshowmode
 
@@ -23,16 +27,21 @@ set expandtab
 
 set splitbelow
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
-
-let g:ycm_confirm_extra_conf = 0
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sjl/badwolf'
 Plugin 'itchyny/lightline.vim'
-Plugin 'ycm-core/YouCompleteMe'
+Plugin 'preservim/nerdtree'
+Plugin 'frazrepo/vim-rainbow'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()          
+
 filetype plugin indent on 
-map <C-]> :YcmCompleter GoToImprecise<CR>
+map <F6> :NERDTreeToggle<CR>
+nnoremap <silent> <C-p> :FZF<CR>
+let g:rainbow_active = 1
